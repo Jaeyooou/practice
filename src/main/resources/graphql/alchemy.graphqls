@@ -1,6 +1,13 @@
 type User {
     id: ID!
     name: String
+    logs: [Log]
+}
+
+type Log {
+    id: ID!
+    user: User!
+    description: String
 }
 
 type Query {
@@ -9,5 +16,6 @@ type Query {
 }
 
 type Mutation {
-    addUser(name: String): User!
+    addUser(name: String!): User!
+    addLog(description: String!, userId: String!): Log!
 }

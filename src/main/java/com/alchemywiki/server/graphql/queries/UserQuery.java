@@ -1,4 +1,4 @@
-package com.alchemywiki.server.resolvers.queries;
+package com.alchemywiki.server.graphql.queries;
 
 import com.alchemywiki.server.entities.User;
 import com.alchemywiki.server.exceptions.NotFoundException;

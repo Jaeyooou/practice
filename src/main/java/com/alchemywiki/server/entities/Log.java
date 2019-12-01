@@ -5,17 +5,19 @@ import lombok.Getter;
 import lombok.ToString;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotNull;
 
 @Document
 @Builder @ToString @Getter
-public class User {
+public class Log {
   @Id
   private String id;
 
-  @NotNull
-  @Length(min = 4, max = 20)
-  private String name;
+  private String description;
+
+  @DBRef(lazy = true)
+  private User user;
 }

@@ -28,6 +28,7 @@ dependencies {
     implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:5.11.1'
     implementation 'com.graphql-java-kickstart:graphiql-spring-boot-starter:5.11.1'
     implementation 'com.graphql-java-kickstart:graphql-java-tools:5.7.1'
+    testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:5.11.1'
 
     compileOnly 'org.projectlombok:lombok'
 
@@ -39,7 +40,7 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
-    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
+    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'    
 }
 
 test {

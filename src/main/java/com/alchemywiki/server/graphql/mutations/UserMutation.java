@@ -1,4 +1,4 @@
-package com.alchemywiki.server.resolvers.mutations;
+package com.alchemywiki.server.graphql.mutations;
 
 import com.alchemywiki.server.entities.User;
 import com.alchemywiki.server.repositories.UserRepository;
