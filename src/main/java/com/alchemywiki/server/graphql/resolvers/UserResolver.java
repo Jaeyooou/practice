@@ -16,7 +16,6 @@ public class UserResolver implements GraphQLResolver<User> {
   private final LogRepository repository;
 
   public List<Log> getLogs(User user, DataFetchingEnvironment env) {
-
     return repository.findByUser(user);
   }
 }

@@ -22,13 +22,13 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 @DataMongoTest
 public class LogMutationTest {
 
-  private User user1 = User.builder().name("user1").build();
-
   @Autowired private LogRepository logRepository;
   @Autowired private UserRepository userRepository;
   @Autowired private MongoTemplate mongoTemplate;
 
   private LogMutation mutation;
+
+  private User user1 = User.builder().name("user1").build();
 
   @Before
   public void before() {

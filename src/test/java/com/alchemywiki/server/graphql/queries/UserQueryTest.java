@@ -22,14 +22,13 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 @DataMongoTest
 public class UserQueryTest {
 
-  private User user1 = User.builder().name("user1").build();
-  private User user2 = User.builder().name("user2").build();
-
-
   @Autowired private MongoTemplate mongoTemplate;
   @Autowired private UserRepository repository;
 
   private UserQuery userQuery;
+
+  private User user1 = User.builder().name("user1").build();
+  private User user2 = User.builder().name("user2").build();
 
   @Before
   public void before() {
