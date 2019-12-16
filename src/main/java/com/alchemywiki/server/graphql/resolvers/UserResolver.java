@@ -2,7 +2,9 @@ package com.alchemywiki.server.graphql.resolvers;
 
 import com.alchemywiki.server.entities.Log;
 import com.alchemywiki.server.entities.User;
+import com.alchemywiki.server.entities.Message;
 import com.alchemywiki.server.repositories.LogRepository;
+import com.alchemywiki.server.repositories.MessageRepository;
 import com.coxautodev.graphql.tools.GraphQLResolver;
 import graphql.schema.DataFetchingEnvironment;
 import lombok.RequiredArgsConstructor;
@@ -14,8 +16,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserResolver implements GraphQLResolver<User> {
   private final LogRepository repository;
-
+ // private final MessageRepository repository;
   public List<Log> getLogs(User user, DataFetchingEnvironment env) {
     return repository.findByUser(user);
   }
+  public List<Log> getMessages(User user, DataFetchingEnvironment env) {
+    return repository.findByUser(user);
+  }
+
 }

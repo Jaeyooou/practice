@@ -2,20 +2,31 @@ type User {
     id: ID!
     name: String
     logs: [Log]
+    message: Message
 }
 
 type Log {
     id: ID!
     user: User!
     description: String
+#    message: Message
+}
+
+type Message {
+id: ID!
+content: String
+user: User!
+logs: [Log]!
 }
 
 type Query {
     user(id: String): User!
     users: [User]!
+    messages: [Message]!
 }
 
 type Mutation {
     addUser(name: String!): User!
     addLog(description: String!, userId: String!): Log!
+    addMessage(content: String! , userId: String!) : Message!
 }
