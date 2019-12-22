@@ -3,6 +3,7 @@ package com.alchemywiki.server.graphql.resolvers;
 import com.alchemywiki.server.entities.Log;
 import com.alchemywiki.server.entities.User;
 import com.alchemywiki.server.repositories.LogRepository;
+import com.alchemywiki.server.repositories.MessageRepository;
 import graphql.schema.DataFetchingEnvironment;
 import org.junit.After;
 import org.junit.Before;
@@ -26,6 +27,7 @@ public class UserResolverTest {
 
   @Autowired private MongoTemplate mongoTemplate;
   @Autowired private LogRepository repository;
+  @Autowired private MessageRepository repository1;
 
   @Mock private DataFetchingEnvironment env;
 
