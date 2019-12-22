@@ -13,16 +13,16 @@ type Log {
 }
 
 type Message {
-id: ID!
-content: String
-user: User!
-logs: [Log]!
+    id: ID!
+    content: String
+    user: User!
+    logs: [Log]!
 }
 
 type Query {
     user(id: String): User!
     users: [User]!
-    messages: [Message]!
+  #  messages: [Message]!
 }
 
 type Mutation {

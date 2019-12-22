@@ -19,7 +19,11 @@ public class User {
   @NotNull
   @Length(min = 4, max = 20)
   @Indexed(unique = true)
+
   private String name;
+
+  //private Message message;
+
 
 
 }

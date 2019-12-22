@@ -16,12 +16,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserResolver implements GraphQLResolver<User> {
   private final LogRepository repository;
- // private final MessageRepository repository;
+  private final MessageRepository repository2;
+
   public List<Log> getLogs(User user, DataFetchingEnvironment env) {
     return repository.findByUser(user);
   }
-  public List<Log> getMessages(User user, DataFetchingEnvironment env) {
-    return repository.findByUser(user);
+
+  public List<Message> getMassages(User user, DataFetchingEnvironment env) {
+    return repository2.findByUser(user);
   }
 
 }

@@ -10,15 +10,15 @@ import com.alchemywiki.server.repositories.UserRepository;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+
 @Component
 @RequiredArgsConstructor
 public class MessageMutation implements GraphQLMutationResolver{
 
   private final UserRepository userRepository;
   private final MessageRepository messageRepository;
-  private final LogRepository logRepository;
-  public Message addMessage(String content, String userId) {
 
+  public Message addMessage(String content, String userId) {
     User user = userRepository.findById(userId).orElseThrow(() -> new NotFoundException(User.class, userId));
     return messageRepository.save(Message.builder().content(content).user(user).build());
   }
